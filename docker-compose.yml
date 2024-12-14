@@ -1,0 +1,22 @@
+services:
+
+  pgadmin:
+    container_name: pgadmin
+    image: dpage/pgadmin4:latest
+    restart: always
+    ports:
+      - 5050:5050
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_EMAIL}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD}
+      PGADMIN_LISTEN_PORT: 5050
+    volumes:
+      - data:/var/lib/pgadmin
+
+volumes:
+  data:
+
+networks:
+  default:
+    external: true
+    name: base
