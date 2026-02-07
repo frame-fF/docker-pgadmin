@@ -7,7 +7,6 @@ services:
     ports:
       - 5050:5050
     environment:
-      PGADMIN_CONFIG_DATABASE_URI: "'postgresql://postgres:password@postgresql:5432/pgadmin'"
       PGADMIN_DEFAULT_EMAIL: ${PGADMIN_EMAIL}
       PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD}
       PGADMIN_LISTEN_PORT: 5050
